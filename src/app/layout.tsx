@@ -38,6 +38,17 @@ export const metadata: Metadata = {
   },
   description:
     "Official portfolio of Anil Kumar. Software engineer, YouTube creator (@ANILMONITOR, @ANILENGINEER, @VLOGANIl), architect of recstudentportal.com (Ramgarh Engineering College), founder of XpertBite (Garhwa Software Company), distdel.com, and easylike.in.",
+  icons: {
+    icon: [
+      { url: "/images/anil.jpeg", type: "image/jpeg" },
+      { url: "/images/anil.jpeg", sizes: "32x32", type: "image/jpeg" },
+      { url: "/images/anil.jpeg", sizes: "192x192", type: "image/jpeg" },
+    ],
+    shortcut: "/images/anil.jpeg",
+    apple: [
+      { url: "/images/anil.jpeg", sizes: "180x180", type: "image/jpeg" },
+    ],
+  },
   keywords: [
     "rec student portal",
     "recstudentportal.com",
@@ -148,6 +159,9 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} ${outfit.variable} scroll-smooth dark`} suppressHydrationWarning>
       <head>
+        <link rel="icon" href="/images/anil.jpeg" type="image/jpeg" />
+        <link rel="apple-touch-icon" href="/images/anil.jpeg" />
+        <link rel="shortcut icon" href="/images/anil.jpeg" />
         <PersonSchema />
         <WebSiteSchema />
         <OrganizationSchema />
