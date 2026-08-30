@@ -8,8 +8,6 @@ import {
   Calendar,
   User,
   ArrowLeft,
-  Share2,
-  Bookmark,
   Youtube,
   Tag,
 } from "lucide-react";
@@ -65,13 +63,13 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
   }
 
   return (
-    <div className="pt-28 pb-20">
+    <div className="pt-24 sm:pt-28 pb-20">
       <article className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Back link */}
-        <div className="mb-8">
+        <div className="mb-6 sm:mb-8">
           <Link
             href="/blog"
-            className="inline-flex items-center gap-2 text-xs font-semibold text-gray-400 hover:text-white transition-colors"
+            className="inline-flex items-center gap-2 text-xs font-semibold text-slate-600 hover:text-slate-900 dark:text-gray-400 dark:hover:text-white transition-colors"
           >
             <ArrowLeft className="w-4 h-4" />
             <span>Back to All Articles</span>
@@ -80,28 +78,28 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
 
         {/* Article Header */}
         <header className="space-y-4 mb-8">
-          <span className="px-3 py-1 rounded-full text-xs font-semibold bg-indigo-600/20 text-indigo-400 border border-indigo-500/30">
+          <span className="px-3 py-1 rounded-full text-xs font-semibold bg-indigo-50 dark:bg-indigo-600/20 text-indigo-700 dark:text-indigo-400 border border-indigo-200 dark:border-indigo-500/30">
             {post.category}
           </span>
 
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white font-display leading-tight">
+          <h1 className="text-2xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 dark:text-white font-display leading-tight">
             {post.title}
           </h1>
 
-          <div className="flex flex-wrap items-center justify-between gap-4 pt-2 border-y border-white/10 py-3 text-xs text-gray-400">
+          <div className="flex flex-wrap items-center justify-between gap-4 pt-2 border-y border-slate-200/80 dark:border-white/10 py-3 text-xs text-slate-500 dark:text-gray-400">
             <div className="flex items-center gap-4">
-              <span className="flex items-center gap-1.5 text-white font-medium">
-                <User className="w-3.5 h-3.5 text-indigo-400" />
+              <span className="flex items-center gap-1.5 text-slate-900 dark:text-white font-medium">
+                <User className="w-3.5 h-3.5 text-indigo-600 dark:text-indigo-400" />
                 {post.author}
               </span>
               <span>•</span>
               <span className="flex items-center gap-1">
-                <Calendar className="w-3.5 h-3.5 text-indigo-400" />
+                <Calendar className="w-3.5 h-3.5 text-indigo-600 dark:text-indigo-400" />
                 {post.publishDate}
               </span>
               <span>•</span>
               <span className="flex items-center gap-1">
-                <Clock className="w-3.5 h-3.5 text-indigo-400" />
+                <Clock className="w-3.5 h-3.5 text-indigo-600 dark:text-indigo-400" />
                 {post.readTime}
               </span>
             </div>
@@ -109,7 +107,7 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
         </header>
 
         {/* Cover Image */}
-        <div className="relative aspect-[16/9] rounded-3xl overflow-hidden mb-10 border border-white/15 shadow-2xl bg-surface-200">
+        <div className="relative aspect-[16/9] rounded-3xl overflow-hidden mb-10 border border-slate-200/80 dark:border-white/15 shadow-xl bg-slate-200 dark:bg-surface-200">
           <Image
             src={post.coverImage}
             alt={post.title}
@@ -120,7 +118,7 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
         </div>
 
         {/* Article Body */}
-        <div className="glass-panel rounded-3xl p-6 sm:p-10 border border-white/10 space-y-6 text-gray-300 text-sm sm:text-base leading-relaxed">
+        <div className="glass-panel rounded-3xl p-6 sm:p-10 border border-slate-200/80 dark:border-white/10 space-y-6 text-slate-800 dark:text-gray-300 text-sm sm:text-base leading-relaxed shadow-sm">
           {post.content.map((paragraph, idx) => (
             <p key={idx} className="leading-relaxed">
               {paragraph}
@@ -128,14 +126,14 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
           ))}
 
           {/* Tags */}
-          <div className="pt-8 border-t border-white/10 flex flex-wrap items-center gap-2">
-            <span className="text-xs text-gray-400 font-semibold flex items-center gap-1 mr-1">
+          <div className="pt-6 sm:pt-8 border-t border-slate-200/80 dark:border-white/10 flex flex-wrap items-center gap-2">
+            <span className="text-xs text-slate-500 dark:text-gray-400 font-semibold flex items-center gap-1 mr-1">
               <Tag className="w-3 h-3" /> Tags:
             </span>
             {post.tags.map((tag, idx) => (
               <span
                 key={idx}
-                className="px-2.5 py-1 rounded-lg text-xs bg-white/5 text-gray-300 border border-white/5"
+                className="px-2.5 py-1 rounded-lg text-xs bg-slate-100 dark:bg-white/5 text-slate-700 dark:text-gray-300 border border-slate-200/80 dark:border-white/5"
               >
                 #{tag}
               </span>
@@ -144,8 +142,8 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
         </div>
 
         {/* Author Card Box */}
-        <div className="mt-12 p-6 rounded-2xl glass-panel border border-white/15 flex flex-col sm:flex-row items-center gap-6">
-          <div className="relative w-16 h-16 rounded-full overflow-hidden border-2 border-indigo-500/50 shrink-0">
+        <div className="mt-10 p-5 sm:p-6 rounded-2xl glass-panel border border-slate-200/80 dark:border-white/15 flex flex-col sm:flex-row items-center gap-4 sm:gap-6 shadow-sm">
+          <div className="relative w-14 h-14 sm:w-16 sm:h-16 rounded-full overflow-hidden border-2 border-indigo-500/50 shrink-0">
             <Image
               src={PORTFOLIO_DATA.personal.avatar}
               alt={post.author}
@@ -153,11 +151,11 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
               className="object-cover"
             />
           </div>
-          <div className="space-y-1 text-center sm:text-left flex-1">
-            <div className="text-base font-bold text-white font-display">
+          <div className="space-y-0.5 text-center sm:text-left flex-1">
+            <div className="text-base font-bold text-slate-900 dark:text-white font-display">
               Written by {post.author}
             </div>
-            <p className="text-xs text-gray-400">
+            <p className="text-xs text-slate-600 dark:text-gray-400">
               Software Engineer & creator behind Anil Monitor, Anil Engineer, and Anil Monitor Vlog.
             </p>
           </div>
@@ -165,7 +163,7 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
             href={PORTFOLIO_DATA.personal.socials.youtubeMain}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-red-600 hover:bg-red-500 text-white text-xs font-semibold shrink-0 transition-colors"
+            className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-red-600 hover:bg-red-500 text-white text-xs font-semibold shrink-0 transition-colors shadow-sm"
           >
             <Youtube className="w-3.5 h-3.5" />
             <span>Subscribe on YT</span>

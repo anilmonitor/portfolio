@@ -9,11 +9,9 @@ import {
   Linkedin,
   Facebook,
   Send,
-  Mail,
-  Heart,
   ExternalLink,
-  ShieldCheck,
   Zap,
+  ArrowRight,
 } from "lucide-react";
 import { PORTFOLIO_DATA } from "@/data/portfolioData";
 
@@ -21,14 +19,14 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="border-t border-white/10 bg-[#07090e] pt-16 pb-12 relative overflow-hidden">
+    <footer className="border-t border-slate-200/80 dark:border-white/10 bg-slate-100/90 dark:bg-[#07090e] pt-14 pb-10 relative overflow-hidden transition-colors">
       {/* Background glow */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-3/4 h-24 bg-gradient-to-b from-indigo-500/10 to-transparent blur-2xl pointer-events-none" />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-3/4 h-24 bg-gradient-to-b from-indigo-500/5 dark:from-indigo-500/10 to-transparent blur-2xl pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b border-white/10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 sm:gap-10 pb-10 border-b border-slate-200/80 dark:border-white/10">
           {/* Col 1 & 2: Brand & About */}
-          <div className="lg:col-span-2 space-y-4">
+          <div className="lg:col-span-2 space-y-3.5">
             <div className="flex items-center gap-3">
               <div className="relative w-10 h-10 rounded-full overflow-hidden border border-indigo-500/50">
                 <Image
@@ -40,26 +38,26 @@ export default function Footer() {
                 />
               </div>
               <div>
-                <span className="text-xl font-bold text-white font-display tracking-tight">
+                <span className="text-xl font-bold text-slate-900 dark:text-white font-display tracking-tight">
                   Anil Kumar
                 </span>
-                <p className="text-xs text-indigo-400 font-medium">
-                  Software Engineer • Tech Educator • 3 YouTube Channels
+                <p className="text-xs text-indigo-600 dark:text-indigo-400 font-medium">
+                  Software Engineer • Educator • Founder
                 </p>
               </div>
             </div>
 
-            <p className="text-sm text-gray-400 leading-relaxed max-w-sm">
-              Empowering engineers, students, and tech enthusiasts worldwide with practical tutorials, embedded hardware projects, and creator insights across YouTube.
+            <p className="text-xs sm:text-sm text-slate-600 dark:text-gray-400 leading-relaxed max-w-sm">
+              Empowering engineers, learners, and digital builders with practical tutorials, embedded hardware, and digital platforms across YouTube and the web.
             </p>
 
-            {/* Social Icons (Lucide SVG Icons) */}
-            <div className="flex flex-wrap items-center gap-2 pt-2">
+            {/* Social Icons */}
+            <div className="flex flex-wrap items-center gap-2 pt-1">
               <a
                 href={PORTFOLIO_DATA.personal.socials.youtubeMain}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-9 h-9 rounded-lg bg-white/5 hover:bg-red-600/20 text-gray-400 hover:text-red-400 flex items-center justify-center transition-colors border border-white/5"
+                className="w-8 h-8 rounded-lg bg-white dark:bg-white/5 hover:bg-red-50 dark:hover:bg-red-600/20 text-slate-600 dark:text-gray-400 hover:text-red-600 dark:hover:text-red-400 flex items-center justify-center transition-colors border border-slate-200 dark:border-white/5 shadow-sm"
                 title="YouTube @ANILMONITOR"
                 aria-label="YouTube Main"
               >
@@ -69,7 +67,7 @@ export default function Footer() {
                 href={PORTFOLIO_DATA.personal.socials.instagram}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-9 h-9 rounded-lg bg-white/5 hover:bg-pink-600/20 text-gray-400 hover:text-pink-400 flex items-center justify-center transition-colors border border-white/5"
+                className="w-8 h-8 rounded-lg bg-white dark:bg-white/5 hover:bg-pink-50 dark:hover:bg-pink-600/20 text-slate-600 dark:text-gray-400 hover:text-pink-600 dark:hover:text-pink-400 flex items-center justify-center transition-colors border border-slate-200 dark:border-white/5 shadow-sm"
                 title="Instagram @anilmonitor"
                 aria-label="Instagram"
               >
@@ -79,7 +77,7 @@ export default function Footer() {
                 href={PORTFOLIO_DATA.personal.socials.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-9 h-9 rounded-lg bg-white/5 hover:bg-white/15 text-gray-400 hover:text-white flex items-center justify-center transition-colors border border-white/5"
+                className="w-8 h-8 rounded-lg bg-white dark:bg-white/5 hover:bg-slate-200 dark:hover:bg-white/15 text-slate-700 dark:text-gray-400 hover:text-slate-900 dark:hover:text-white flex items-center justify-center transition-colors border border-slate-200 dark:border-white/5 shadow-sm"
                 title="GitHub anilmonitor"
                 aria-label="GitHub"
               >
@@ -89,7 +87,7 @@ export default function Footer() {
                 href={PORTFOLIO_DATA.personal.socials.twitter}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-9 h-9 rounded-lg bg-white/5 hover:bg-sky-500/20 text-gray-400 hover:text-sky-400 flex items-center justify-center transition-colors border border-white/5"
+                className="w-8 h-8 rounded-lg bg-white dark:bg-white/5 hover:bg-sky-50 dark:hover:bg-sky-500/20 text-slate-600 dark:text-gray-400 hover:text-sky-600 dark:hover:text-sky-400 flex items-center justify-center transition-colors border border-slate-200 dark:border-white/5 shadow-sm"
                 title="Twitter / X @anilmonitor"
                 aria-label="Twitter"
               >
@@ -99,7 +97,7 @@ export default function Footer() {
                 href={PORTFOLIO_DATA.personal.socials.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-9 h-9 rounded-lg bg-white/5 hover:bg-blue-600/20 text-gray-400 hover:text-blue-400 flex items-center justify-center transition-colors border border-white/5"
+                className="w-8 h-8 rounded-lg bg-white dark:bg-white/5 hover:bg-blue-50 dark:hover:bg-blue-600/20 text-slate-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 flex items-center justify-center transition-colors border border-slate-200 dark:border-white/5 shadow-sm"
                 title="LinkedIn anilmonitor"
                 aria-label="LinkedIn"
               >
@@ -109,7 +107,7 @@ export default function Footer() {
                 href={PORTFOLIO_DATA.personal.socials.facebook}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-9 h-9 rounded-lg bg-white/5 hover:bg-blue-700/20 text-gray-400 hover:text-blue-500 flex items-center justify-center transition-colors border border-white/5"
+                className="w-8 h-8 rounded-lg bg-white dark:bg-white/5 hover:bg-blue-50 dark:hover:bg-blue-700/20 text-slate-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-500 flex items-center justify-center transition-colors border border-slate-200 dark:border-white/5 shadow-sm"
                 title="Facebook anilmonitorvlog"
                 aria-label="Facebook"
               >
@@ -119,7 +117,7 @@ export default function Footer() {
                 href={PORTFOLIO_DATA.personal.socials.telegram}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-9 h-9 rounded-lg bg-white/5 hover:bg-sky-500/20 text-gray-400 hover:text-sky-400 flex items-center justify-center transition-colors border border-white/5"
+                className="w-8 h-8 rounded-lg bg-white dark:bg-white/5 hover:bg-sky-50 dark:hover:bg-sky-500/20 text-slate-600 dark:text-gray-400 hover:text-sky-600 dark:hover:text-sky-400 flex items-center justify-center transition-colors border border-slate-200 dark:border-white/5 shadow-sm"
                 title="Telegram Channel"
                 aria-label="Telegram"
               >
@@ -130,65 +128,64 @@ export default function Footer() {
 
           {/* Col 3: YouTube Channels */}
           <div className="space-y-3">
-            <h3 className="text-xs font-semibold uppercase tracking-wider text-gray-200">
+            <h3 className="text-xs font-semibold uppercase tracking-wider text-slate-900 dark:text-gray-200">
               YouTube Channels
             </h3>
-            <ul className="space-y-2 text-sm">
+            <ul className="space-y-2 text-xs sm:text-sm">
               {PORTFOLIO_DATA.channels.map((ch) => (
                 <li key={ch.id}>
                   <a
                     href={ch.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-gray-400 hover:text-white flex items-center gap-2 group transition-colors"
+                    className="text-slate-600 dark:text-gray-400 hover:text-slate-900 dark:hover:text-white flex items-center gap-2 group transition-colors"
                   >
                     <Youtube className="w-3.5 h-3.5 text-red-500 group-hover:scale-110 transition-transform" />
                     <span>{ch.name}</span>
-                    <ExternalLink className="w-3 h-3 text-gray-600 group-hover:text-gray-400 opacity-0 group-hover:opacity-100 transition-opacity" />
+                    <ExternalLink className="w-3 h-3 text-slate-400 opacity-0 group-hover:opacity-100 transition-opacity" />
                   </a>
                 </li>
               ))}
               <li>
                 <Link
                   href="/channels"
-                  className="text-xs text-indigo-400 hover:text-indigo-300 font-medium inline-flex items-center gap-1 mt-1"
+                  className="text-xs text-indigo-600 dark:text-indigo-400 hover:text-indigo-700 dark:hover:text-indigo-300 font-medium inline-flex items-center gap-1 mt-1"
                 >
-                  <Zap className="w-3 h-3" /> Explore All Channel Playlists
+                  <Zap className="w-3 h-3" /> Explore Channels Hub
                 </Link>
               </li>
             </ul>
           </div>
 
-          {/* Col 4: Quick Links */}
+          {/* Col 4: Quick Navigation */}
           <div className="space-y-3">
-            <h3 className="text-xs font-semibold uppercase tracking-wider text-gray-200">
+            <h3 className="text-xs font-semibold uppercase tracking-wider text-slate-900 dark:text-gray-200">
               Quick Navigation
             </h3>
-            <ul className="space-y-2 text-sm text-gray-400">
+            <ul className="space-y-2 text-xs sm:text-sm text-slate-600 dark:text-gray-400">
               <li>
-                <Link href="/about" className="hover:text-white transition-colors">
+                <Link href="/about" className="hover:text-slate-900 dark:hover:text-white transition-colors">
                   About Anil Kumar
                 </Link>
               </li>
               <li>
-                <Link href="/projects" className="hover:text-white transition-colors">
-                  Engineering Projects
+                <Link href="/projects" className="hover:text-slate-900 dark:hover:text-white transition-colors">
+                  Ventures & Projects
                 </Link>
               </li>
               <li>
-                <Link href="/blog" className="hover:text-white transition-colors">
-                  Tech Blog & Guides
+                <Link href="/socials" className="hover:text-slate-900 dark:hover:text-white transition-colors">
+                  All Social Profiles
                 </Link>
               </li>
               <li>
-                <Link href="/contact" className="hover:text-white transition-colors">
-                  Brand Sponsorships
+                <Link href="/blog" className="hover:text-slate-900 dark:hover:text-white transition-colors">
+                  Articles & Guides
                 </Link>
               </li>
               <li>
-                <Link href="/sitemap.xml" className="hover:text-indigo-400 transition-colors flex items-center gap-1">
-                  <span>XML Sitemap</span>
-                  <span className="text-[10px] bg-indigo-500/20 text-indigo-300 px-1.5 py-0.5 rounded font-mono">SEO</span>
+                <Link href="/contact" className="hover:text-slate-900 dark:hover:text-white transition-colors">
+                  Contact
                 </Link>
               </li>
             </ul>
@@ -196,36 +193,25 @@ export default function Footer() {
 
           {/* Col 5: Direct Contact */}
           <div className="space-y-3">
-            <h3 className="text-xs font-semibold uppercase tracking-wider text-gray-200">
-              Direct Contact
+            <h3 className="text-xs font-semibold uppercase tracking-wider text-slate-900 dark:text-gray-200">
+              Get in Touch
             </h3>
-            <p className="text-xs text-gray-400">
-              For business inquiries, sponsorships, or project collaborations:
+            <p className="text-xs text-slate-600 dark:text-gray-400">
+              Have a question, tech inquiry, or software development discussion?
             </p>
-            <a
-              href={`mailto:${PORTFOLIO_DATA.personal.email}`}
-              className="inline-flex items-center gap-2 p-2.5 rounded-lg bg-surface-100/80 hover:bg-surface-200 border border-white/10 text-white text-xs font-medium transition-all group"
+            <Link
+              href="/contact"
+              className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-semibold shadow-sm transition-all"
             >
-              <Mail className="w-4 h-4 text-indigo-400 group-hover:scale-110 transition-transform" />
-              <span>{PORTFOLIO_DATA.personal.email}</span>
-            </a>
-            <div className="text-[11px] text-emerald-400 flex items-center gap-1.5">
-              <ShieldCheck className="w-3.5 h-3.5" />
-              <span>Verified Creator & Engineer</span>
-            </div>
+              <span>Open Contact Form</span>
+              <ArrowRight className="w-3.5 h-3.5" />
+            </Link>
           </div>
         </div>
 
         {/* Bottom Bar */}
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-gray-500">
-          <div>
-            © {currentYear} Anil Kumar. Hosted on <span className="text-gray-400 font-mono">anilmonitor.xpertbite.in</span>.
-          </div>
-          <div className="flex items-center gap-1 text-gray-400">
-            <span>Crafted with</span>
-            <Heart className="w-3.5 h-3.5 text-red-500 fill-red-500" />
-            <span>for the Global Tech Community</span>
-          </div>
+        <div className="pt-6 text-center text-xs text-slate-500 dark:text-gray-400 font-mono">
+          anilmonitor.xpertbite.in © {currentYear} Anil Kumar
         </div>
       </div>
     </footer>

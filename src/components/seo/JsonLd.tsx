@@ -36,14 +36,14 @@ export function PersonSchema() {
         "@type": "Organization",
         "name": "XpertBite",
         "url": "https://xpertbite.in",
-        "logo": `${PORTFOLIO_DATA.personal.websiteUrl}/images/xpertbitelogo.png`,
+        "logo": `${PORTFOLIO_DATA.personal.websiteUrl}/images/xpertbite-logo.png`,
         "description": "Garhwa Software Development Company"
       },
       {
         "@type": "Organization",
         "name": "REC Student Portal",
         "url": "https://recstudentportal.com/",
-        "logo": `${PORTFOLIO_DATA.personal.websiteUrl}/images/RECstudentportal.png`,
+        "logo": `${PORTFOLIO_DATA.personal.websiteUrl}/images/recstudentportal-logo.png`,
         "description": "Ramgarh Engineering College Student Portal"
       },
       {
@@ -57,7 +57,7 @@ export function PersonSchema() {
         "@type": "Organization",
         "name": "easylike.in",
         "url": "https://easylike.in",
-        "logo": `${PORTFOLIO_DATA.personal.websiteUrl}/images/easylike.png`,
+        "logo": `${PORTFOLIO_DATA.personal.websiteUrl}/images/easylike-logo.png`,
         "description": "Digital growth & creator tools platform"
       }
     ],
@@ -117,7 +117,7 @@ export function OrganizationSchema() {
         "@type": "Organization",
         "name": "XpertBite",
         "url": "https://xpertbite.in",
-        "logo": `${PORTFOLIO_DATA.personal.websiteUrl}/images/xpertbitelogo.png`,
+        "logo": `${PORTFOLIO_DATA.personal.websiteUrl}/images/xpertbite-logo.png`,
         "founder": {
           "@type": "Person",
           "name": "Anil Kumar"
@@ -134,7 +134,7 @@ export function OrganizationSchema() {
         "@type": "Organization",
         "name": "REC Student Portal",
         "url": "https://recstudentportal.com/",
-        "logo": `${PORTFOLIO_DATA.personal.websiteUrl}/images/RECstudentportal.png`,
+        "logo": `${PORTFOLIO_DATA.personal.websiteUrl}/images/recstudentportal-logo.png`,
         "founder": {
           "@type": "Person",
           "name": "Anil Kumar"
@@ -162,7 +162,7 @@ export function OrganizationSchema() {
         "@type": "Organization",
         "name": "easylike.in",
         "url": "https://easylike.in",
-        "logo": `${PORTFOLIO_DATA.personal.websiteUrl}/images/easylike.png`,
+        "logo": `${PORTFOLIO_DATA.personal.websiteUrl}/images/easylike-logo.png`,
         "founder": {
           "@type": "Person",
           "name": "Anil Kumar"

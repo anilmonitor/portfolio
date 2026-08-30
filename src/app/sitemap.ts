@@ -5,52 +5,28 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = PORTFOLIO_DATA.personal.websiteUrl;
   const currentDate = new Date();
 
-  // Static routes
-  const staticRoutes: MetadataRoute.Sitemap = [
-    {
-      url: `${baseUrl}/`,
-      lastModified: currentDate,
-      changeFrequency: "daily",
-      priority: 1.0,
-    },
-    {
-      url: `${baseUrl}/channels`,
-      lastModified: currentDate,
-      changeFrequency: "weekly",
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/about`,
-      lastModified: currentDate,
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/projects`,
-      lastModified: currentDate,
-      changeFrequency: "weekly",
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/blog`,
-      lastModified: currentDate,
-      changeFrequency: "daily",
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/contact`,
-      lastModified: currentDate,
-      changeFrequency: "monthly",
-      priority: 0.7,
-    },
-  ];
-
-  // Dynamic blog routes
-  const blogRoutes: MetadataRoute.Sitemap = PORTFOLIO_DATA.blogs.map((post) => ({
-    url: `${baseUrl}/blog/${post.slug}`,
+  // Static core routes
+  const staticRoutes = [
+    "",
+    "/channels",
+    "/about",
+    "/projects",
+    "/socials",
+    "/blog",
+    "/contact",
+  ].map((route) => ({
+    url: `${baseUrl}${route}`,
     lastModified: currentDate,
-    changeFrequency: "weekly",
-    priority: 0.8,
+    changeFrequency: "weekly" as const,
+    priority: route === "" ? 1.0 : 0.8,
+  }));
+
+  // Dynamic blog post routes
+  const blogRoutes = PORTFOLIO_DATA.blogs.map((blog) => ({
+    url: `${baseUrl}/blog/${blog.slug}`,
+    lastModified: currentDate,
+    changeFrequency: "monthly" as const,
+    priority: 0.7,
   }));
 
   return [...staticRoutes, ...blogRoutes];

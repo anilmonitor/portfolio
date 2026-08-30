@@ -5,8 +5,6 @@ import ChannelShowcase from "@/components/home/ChannelShowcase";
 import FeaturedVideos from "@/components/home/FeaturedVideos";
 import SkillsSection from "@/components/home/SkillsSection";
 import ProjectsTeaser from "@/components/home/ProjectsTeaser";
-import TestimonialsSection from "@/components/home/TestimonialsSection";
-import CollabCta from "@/components/home/CollabCta";
 
 export default function HomePage() {
   return (
@@ -17,8 +15,6 @@ export default function HomePage() {
       <FeaturedVideos />
       <SkillsSection />
       <ProjectsTeaser />
-      <TestimonialsSection />
-      <CollabCta />
     </>
   );
 }

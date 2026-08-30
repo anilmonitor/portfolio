@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import MobileBottomNav from "@/components/layout/MobileBottomNav";
+import { ThemeProvider } from "@/components/theme/ThemeProvider";
 import { PersonSchema, WebSiteSchema, OrganizationSchema } from "@/components/seo/JsonLd";
 import { PORTFOLIO_DATA } from "@/data/portfolioData";
 
@@ -20,7 +21,10 @@ const outfit = Outfit({
 });
 
 export const viewport: Viewport = {
-  themeColor: "#0a0d14",
+  themeColor: [
+    { media: "(prefers-color-scheme: dark)", color: "#0a0d14" },
+    { media: "(prefers-color-scheme: light)", color: "#f8fafc" },
+  ],
   width: "device-width",
   initialScale: 1,
   maximumScale: 5,
@@ -35,7 +39,6 @@ export const metadata: Metadata = {
   description:
     "Official portfolio of Anil Kumar. Software engineer, YouTube creator (@ANILMONITOR, @ANILENGINEER, @VLOGANIl), architect of recstudentportal.com (Ramgarh Engineering College), founder of XpertBite (Garhwa Software Company), distdel.com, and easylike.in.",
   keywords: [
-    // REC Student Portal & Ramgarh Engineering College Keywords
     "rec student portal",
     "recstudentportal.com",
     "rec student portal ramgarh",
@@ -44,8 +47,6 @@ export const metadata: Metadata = {
     "rec student portal anil kumar",
     "rec student portal redesign",
     "ramgarh engineering college",
-
-    // Garhdevi Mandir Website Keywords
     "garhdevi mandir website founder",
     "garhdevi mandir website",
     "garhdevi mandir website developer",
@@ -53,8 +54,6 @@ export const metadata: Metadata = {
     "garhdevi temple website developer",
     "maa garhdevi mandir garhwa website",
     "garhdevi mandir portal anil kumar",
-    
-    // Software Development Company in Garhwa
     "garhwa software development company",
     "software development company in garhwa",
     "best software company in garhwa",
@@ -69,16 +68,12 @@ export const metadata: Metadata = {
     "xpertbite.in owner",
     "xpertbite founder",
     "xpertbite anil kumar",
-
-    // Ventures & Platforms
     "distdel.com owner",
     "distdel.com founder",
     "distdel garhwa delivery",
     "easylike.in owner",
     "easylike founder",
     "easylike.in anil kumar",
-
-    // Local Garhwa YouTuber & Influencer Rankings
     "Garhwa youtuber",
     "garhwa biggest youtuber",
     "garhwa influencer",
@@ -91,8 +86,6 @@ export const metadata: Metadata = {
     "anil monitor garhwa",
     "anil engineer garhwa",
     "anil monitor vlog garhwa",
-
-    // Tech Stack & Creator Channels
     "Anil Kumar",
     "Anil Monitor",
     "Anil Engineer",
@@ -153,17 +146,36 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} ${outfit.variable} scroll-smooth dark`}>
+    <html lang="en" className={`${inter.variable} ${outfit.variable} scroll-smooth dark`} suppressHydrationWarning>
       <head>
         <PersonSchema />
         <WebSiteSchema />
         <OrganizationSchema />
+        {/* Anti-flicker script for dark/light mode */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              try {
+                const theme = localStorage.getItem('portfolio-theme') || 'dark';
+                if (theme === 'dark') {
+                  document.documentElement.classList.add('dark');
+                  document.documentElement.classList.remove('light');
+                } else {
+                  document.documentElement.classList.remove('dark');
+                  document.documentElement.classList.add('light');
+                }
+              } catch (e) {}
+            `,
+          }}
+        />
       </head>
-      <body className="bg-background text-foreground min-h-screen flex flex-col antialiased selection:bg-indigo-500 selection:text-white pb-16 md:pb-0">
-        <Navbar />
-        <main className="flex-1">{children}</main>
-        <Footer />
-        <MobileBottomNav />
+      <body className="bg-slate-50 dark:bg-[#0a0d14] text-slate-900 dark:text-[#f3f4f6] min-h-screen flex flex-col antialiased selection:bg-indigo-500 selection:text-white pb-16 md:pb-0 transition-colors duration-300">
+        <ThemeProvider>
+          <Navbar />
+          <main className="flex-1">{children}</main>
+          <Footer />
+          <MobileBottomNav />
+        </ThemeProvider>
       </body>
     </html>
   );

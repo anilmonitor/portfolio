@@ -28,18 +28,18 @@ export default function VideoModal({ video, onClose }: VideoModalProps) {
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md animate-in fade-in duration-200">
-      <div className="relative w-full max-w-4xl bg-surface-50 border border-white/15 rounded-2xl overflow-hidden shadow-2xl">
+      <div className="relative w-full max-w-4xl bg-white dark:bg-surface-50 border border-slate-200 dark:border-white/15 rounded-2xl overflow-hidden shadow-2xl">
         {/* Modal Header */}
-        <div className="flex items-center justify-between p-4 border-b border-white/10 bg-surface-100/50">
+        <div className="flex items-center justify-between p-3.5 sm:p-4 border-b border-slate-200 dark:border-white/10 bg-slate-50 dark:bg-surface-100/50">
           <div className="flex items-center gap-2">
-            <Youtube className="w-5 h-5 text-red-500" />
-            <span className="text-xs font-semibold text-gray-300 uppercase tracking-wider">
+            <Youtube className="w-4 h-4 text-red-500" />
+            <span className="text-xs font-semibold text-slate-700 dark:text-gray-300 uppercase tracking-wider">
               {video.channelName}
             </span>
           </div>
           <button
             onClick={onClose}
-            className="p-1.5 rounded-lg text-gray-400 hover:text-white hover:bg-white/10 transition-colors"
+            className="p-1.5 rounded-lg text-slate-500 hover:text-slate-900 dark:text-gray-400 dark:hover:text-white hover:bg-slate-200/60 dark:hover:bg-white/10 transition-colors"
             aria-label="Close Modal"
           >
             <X className="w-5 h-5" />
@@ -58,16 +58,16 @@ export default function VideoModal({ video, onClose }: VideoModalProps) {
         </div>
 
         {/* Modal Footer / Details */}
-        <div className="p-5 space-y-3">
-          <h3 className="text-lg font-bold text-white font-display">
+        <div className="p-4 sm:p-5 space-y-3">
+          <h3 className="text-base sm:text-lg font-bold text-slate-900 dark:text-white font-display">
             {video.title}
           </h3>
-          <p className="text-sm text-gray-300 leading-relaxed">
+          <p className="text-xs sm:text-sm text-slate-600 dark:text-gray-300 leading-relaxed">
             {video.description}
           </p>
 
-          <div className="flex flex-wrap items-center justify-between gap-4 pt-3 border-t border-white/10">
-            <div className="flex items-center gap-4 text-xs text-gray-400">
+          <div className="flex flex-wrap items-center justify-between gap-3 pt-3 border-t border-slate-200/80 dark:border-white/10">
+            <div className="flex items-center gap-3 text-xs text-slate-500 dark:text-gray-400">
               <span>{video.views} Views</span>
               <span>•</span>
               <span>{video.duration}</span>
@@ -79,7 +79,7 @@ export default function VideoModal({ video, onClose }: VideoModalProps) {
               href={`https://www.youtube.com/watch?v=${video.youtubeId}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-red-600 hover:bg-red-500 text-white text-xs font-semibold transition-colors"
+              className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg bg-red-600 hover:bg-red-500 text-white text-xs font-semibold transition-colors"
             >
               <Youtube className="w-3.5 h-3.5" />
               <span>Watch on YouTube</span>

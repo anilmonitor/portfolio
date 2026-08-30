@@ -97,7 +97,6 @@ export const PORTFOLIO_DATA = {
       postalCode: "822114"
     },
     websiteUrl: "https://anilmonitor.xpertbite.in",
-    email: "contact@anilmonitor.com",
     avatar: "/images/anil.jpeg",
     stats: {
       subscribers: "150K+",
@@ -131,7 +130,7 @@ export const PORTFOLIO_DATA = {
       name: "XpertBite",
       role: "Founder & Owner",
       url: "https://xpertbite.in",
-      logo: "/images/xpertbitelogo.png",
+      logo: "/images/xpertbite-logo.png",
       category: "Software Development Company",
       badge: "Garhwa's Leading Tech Agency",
       description: "Premier software development company in Garhwa providing high-performance web applications, mobile apps, enterprise cloud systems, and digital transformations.",
@@ -143,7 +142,7 @@ export const PORTFOLIO_DATA = {
       name: "REC Student Portal",
       role: "Lead Architect & UI/UX Redesigner",
       url: "https://recstudentportal.com/",
-      logo: "/images/RECstudentportal.png",
+      logo: "/images/recstudentportal-logo.png",
       category: "Campus Academic Ecosystem",
       badge: "Ramgarh Engineering College",
       description: "Redesigned and engineered the official modern student portal for Ramgarh Engineering College (REC), providing seamless academic resources, syllabus, notices, previous year questions, and student utilities.",
@@ -167,7 +166,7 @@ export const PORTFOLIO_DATA = {
       name: "easylike.in",
       role: "Founder & Owner",
       url: "https://easylike.in",
-      logo: "/images/easylike.png",
+      logo: "/images/easylike-logo.png",
       category: "Digital Growth & Tools",
       badge: "Creator SaaS & Analytics",
       description: "Smart digital engagement platform and web utility helping creators, digital marketers, and businesses optimize their social growth and analytics.",
@@ -340,7 +339,7 @@ export const PORTFOLIO_DATA = {
       category: "Ventures & Startups",
       tags: ["Lead Architect & Redesigner", "Ramgarh Engineering College", "REC Student Portal", "Next.js 14"],
       image: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=800&auto=format&fit=crop&q=80",
-      logo: "/images/RECstudentportal.png",
+      logo: "/images/recstudentportal-logo.png",
       demoUrl: "https://recstudentportal.com/",
       featured: true,
       highlights: [
@@ -356,7 +355,7 @@ export const PORTFOLIO_DATA = {
       category: "Ventures & Startups",
       tags: ["Founder & Owner", "Software Development", "Garhwa IT Agency", "Full Stack"],
       image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&auto=format&fit=crop&q=80",
-      logo: "/images/xpertbitelogo.png",
+      logo: "/images/xpertbite-logo.png",
       demoUrl: "https://xpertbite.in",
       featured: true,
       highlights: [
@@ -388,7 +387,7 @@ export const PORTFOLIO_DATA = {
       category: "Ventures & Startups",
       tags: ["Founder & Owner", "SaaS Platform", "Social Analytics", "Automation"],
       image: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=800&auto=format&fit=crop&q=80",
-      logo: "/images/easylike.png",
+      logo: "/images/easylike-logo.png",
       demoUrl: "https://easylike.in",
       featured: true,
       highlights: [
@@ -549,27 +548,6 @@ export const PORTFOLIO_DATA = {
     { year: "2024", title: "Silver Play Button & 100K Subs", description: "Anil Monitor crossed 100,000 subscribers and received YouTube's Silver Creator Award." },
     { year: "2025", title: "Redesigned REC Student Portal & Launched easylike.in", description: "Engineered recstudentportal.com for Ramgarh Engineering College; launched easylike.in and the official Maa Garhdevi Mandir portal." },
     { year: "2026", title: "Integrated Tech & Creator Ecosystem", description: "Managing 3 YouTube channels (150K+ subs), scaling XpertBite, distdel.com, and developing community software." },
-  ],
-
-  testimonials: [
-    {
-      quote: "The redesigned REC Student Portal is so fast and clean! Finding syllabus and PYQs for our semester is now instant.",
-      author: "Aman Verma",
-      role: "Student • Ramgarh Engineering College (REC)",
-      avatar: "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=100&auto=format&fit=crop&q=80"
-    },
-    {
-      quote: "XpertBite built an exceptional web application for our business. Anil's engineering leadership is top-notch!",
-      author: "Priya Patel",
-      role: "Client • XpertBite Software",
-      avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&auto=format&fit=crop&q=80"
-    },
-    {
-      quote: "Anil's PC tutorials on Anil Monitor and hardware projects on Anil Engineer are the best in Jharkhand!",
-      author: "Vikram Mehta",
-      role: "Subscriber • Anil Monitor",
-      avatar: "https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?w=100&auto=format&fit=crop&q=80"
-    }
   ],
 
   faqs: [
