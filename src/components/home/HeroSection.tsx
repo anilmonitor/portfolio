@@ -122,9 +122,6 @@ export default function HeroSection() {
                     <div className="text-lg sm:text-xl font-bold text-white font-display">
                       Anil Kumar
                     </div>
-                    <div className="text-xs text-indigo-300 font-medium mt-0.5">
-                      Engineer • Educator • Founder
-                    </div>
                   </div>
                 </div>
 

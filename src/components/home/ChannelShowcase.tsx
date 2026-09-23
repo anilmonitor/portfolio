@@ -18,13 +18,10 @@ export default function ChannelShowcase() {
     <section className="py-16 sm:py-20 relative overflow-hidden" id="channels">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto space-y-2 mb-12 sm:mb-16">
+        <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-14">
           <h2 className="text-2xl sm:text-4xl font-extrabold text-slate-900 dark:text-white font-display tracking-tight">
             3 YouTube Channels. Endless Knowledge.
           </h2>
-          <p className="text-slate-600 dark:text-gray-400 text-xs sm:text-base leading-relaxed">
-            PC & Windows fixes, hands-on hardware engineering, and creator lifestyle vlogs.
-          </p>
         </div>
 
         {/* Channels Grid */}

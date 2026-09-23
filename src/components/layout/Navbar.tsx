@@ -9,9 +9,11 @@ import {
   X,
   Youtube,
   Github,
+  Linkedin,
+  Twitter,
+  Instagram,
   ExternalLink,
   ChevronDown,
-  Share2,
 } from "lucide-react";
 import { PORTFOLIO_DATA } from "@/data/portfolioData";
 import ThemeToggle from "@/components/theme/ThemeToggle";
@@ -69,9 +71,6 @@ export default function Navbar() {
             <div>
               <span className="text-base sm:text-lg font-bold tracking-tight text-slate-900 dark:text-white block font-display">
                 Anil Kumar
-              </span>
-              <span className="text-[11px] text-slate-500 dark:text-gray-400 font-medium block leading-none mt-0.5">
-                @ANILMONITOR • 3 Channels
               </span>
             </div>
           </Link>
@@ -170,7 +169,7 @@ export default function Navbar() {
             </Link>
           </div>
 
-          {/* Mobile Right Controls: GitHub + Theme Toggle + Menu Button */}
+          {/* Mobile Right Controls: GitHub + Menu Button */}
           <div className="md:hidden flex items-center gap-1.5">
             <a
               href={PORTFOLIO_DATA.personal.socials.github}
@@ -182,7 +181,6 @@ export default function Navbar() {
             >
               <Github className="w-4 h-4" />
             </a>
-            <ThemeToggle />
             <button
               onClick={() => setIsOpen(!isOpen)}
               className="p-2 rounded-xl text-slate-700 dark:text-gray-300 hover:bg-slate-100 dark:hover:bg-white/10 focus:outline-none border border-slate-200 dark:border-white/10"
@@ -218,46 +216,74 @@ export default function Navbar() {
             })}
           </div>
 
-          <div className="pt-3 border-t border-slate-200 dark:border-white/10">
-            <div className="text-xs font-semibold text-slate-500 dark:text-gray-400 uppercase tracking-wider mb-2">
+          {/* YouTube Channels - Icons Only */}
+          <div className="pt-3 border-t border-slate-200 dark:border-white/10 flex items-center justify-between">
+            <span className="text-xs font-semibold text-slate-500 dark:text-gray-400 uppercase tracking-wider">
               YouTube Channels
-            </div>
-            <div className="space-y-1.5">
+            </span>
+            <div className="flex items-center gap-2">
               {PORTFOLIO_DATA.channels.map((ch) => (
                 <a
                   key={ch.id}
                   href={ch.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center justify-between p-2 rounded-xl bg-slate-100/80 dark:bg-surface-100/60 hover:bg-slate-200 dark:hover:bg-white/10 text-xs text-slate-800 dark:text-white"
+                  className="p-2 rounded-xl bg-red-50 hover:bg-red-100 dark:bg-red-500/10 dark:hover:bg-red-500/20 text-red-600 dark:text-red-400 border border-red-200 dark:border-red-500/20 transition-all flex items-center justify-center"
+                  title={`${ch.name} (${ch.handle})`}
+                  aria-label={ch.name}
                 >
-                  <span className="flex items-center gap-2">
-                    <Youtube className="w-3.5 h-3.5 text-red-500" />
-                    {ch.name} ({ch.subscribers})
-                  </span>
-                  <ExternalLink className="w-3.5 h-3.5 text-slate-400" />
+                  <Youtube className="w-4 h-4 fill-current" />
                 </a>
               ))}
             </div>
           </div>
 
-          <div className="pt-3 flex items-center justify-between gap-3 border-t border-slate-200 dark:border-white/10">
-            <Link
-              href="/socials"
-              onClick={() => setIsOpen(false)}
-              className="inline-flex items-center gap-1.5 text-xs text-indigo-600 dark:text-indigo-400 font-semibold"
-            >
-              <Share2 className="w-3.5 h-3.5" />
-              <span>All Social Links & Profiles</span>
-            </Link>
+          {/* Social Media Icons + Theme Toggle */}
+          <div className="pt-3.5 flex items-center justify-between gap-3 border-t border-slate-200 dark:border-white/10">
+            <div className="flex items-center gap-2">
+              <a
+                href={PORTFOLIO_DATA.personal.socials.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-2.5 rounded-xl bg-slate-100 hover:bg-slate-200 dark:bg-white/10 dark:hover:bg-white/20 text-slate-700 dark:text-gray-300 hover:text-slate-900 dark:hover:text-white border border-slate-200/80 dark:border-white/10 transition-all flex items-center justify-center shadow-sm"
+                title="GitHub @anilmonitor"
+                aria-label="GitHub"
+              >
+                <Github className="w-4 h-4" />
+              </a>
+              <a
+                href={PORTFOLIO_DATA.personal.socials.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-2.5 rounded-xl bg-slate-100 hover:bg-blue-50 dark:bg-white/10 dark:hover:bg-blue-500/20 text-slate-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 border border-slate-200/80 dark:border-white/10 transition-all flex items-center justify-center shadow-sm"
+                title="LinkedIn @anilmonitor"
+                aria-label="LinkedIn"
+              >
+                <Linkedin className="w-4 h-4" />
+              </a>
+              <a
+                href={PORTFOLIO_DATA.personal.socials.twitter}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-2.5 rounded-xl bg-slate-100 hover:bg-sky-50 dark:bg-white/10 dark:hover:bg-sky-500/20 text-slate-700 dark:text-gray-300 hover:text-sky-500 dark:hover:text-sky-400 border border-slate-200/80 dark:border-white/10 transition-all flex items-center justify-center shadow-sm"
+                title="Twitter / X @anilmonitor"
+                aria-label="Twitter"
+              >
+                <Twitter className="w-4 h-4" />
+              </a>
+              <a
+                href={PORTFOLIO_DATA.personal.socials.instagram}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-2.5 rounded-xl bg-slate-100 hover:bg-pink-50 dark:bg-white/10 dark:hover:bg-pink-500/20 text-slate-700 dark:text-gray-300 hover:text-pink-600 dark:hover:text-pink-400 border border-slate-200/80 dark:border-white/10 transition-all flex items-center justify-center shadow-sm"
+                title="Instagram @anilmonitor"
+                aria-label="Instagram"
+              >
+                <Instagram className="w-4 h-4" />
+              </a>
+            </div>
 
-            <Link
-              href="/contact"
-              onClick={() => setIsOpen(false)}
-              className="px-4 py-2 rounded-xl bg-indigo-600 text-white text-xs font-semibold shadow"
-            >
-              Contact Anil
-            </Link>
+            <ThemeToggle />
           </div>
         </div>
       )}
