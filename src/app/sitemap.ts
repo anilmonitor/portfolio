@@ -8,11 +8,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // Static core routes
   const staticRoutes = [
     "",
-    "/channels",
     "/about",
     "/projects",
     "/socials",
-    "/blog",
     "/contact",
   ].map((route) => ({
     url: `${baseUrl}${route}`,
@@ -21,13 +19,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: route === "" ? 1.0 : 0.8,
   }));
 
-  // Dynamic blog post routes
-  const blogRoutes = PORTFOLIO_DATA.blogs.map((blog) => ({
-    url: `${baseUrl}/blog/${blog.slug}`,
-    lastModified: currentDate,
-    changeFrequency: "monthly" as const,
-    priority: 0.7,
-  }));
-
-  return [...staticRoutes, ...blogRoutes];
+  return staticRoutes;
 }

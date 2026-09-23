@@ -193,7 +193,7 @@ export function WebSiteSchema() {
     "description": "Official website and portfolio of Anil Kumar - creator of Anil Monitor, Anil Engineer, Anil Monitor Vlog, founder of XpertBite, and architect of recstudentportal.com.",
     "potentialAction": {
       "@type": "SearchAction",
-      "target": `${PORTFOLIO_DATA.personal.websiteUrl}/channels?q={search_term_string}`,
+      "target": `${PORTFOLIO_DATA.personal.websiteUrl}/projects?q={search_term_string}`,
       "query-input": "required name=search_term_string"
     }
   };

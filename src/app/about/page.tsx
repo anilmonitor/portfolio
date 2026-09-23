@@ -33,7 +33,7 @@ export const metadata: Metadata = {
 };
 
 export default function AboutPage() {
-  const { personal, studioGear, milestones, ventures } = PORTFOLIO_DATA;
+  const { personal, milestones, ventures } = PORTFOLIO_DATA;
 
   return (
     <div className="pt-24 sm:pt-28 pb-20">
@@ -182,46 +182,6 @@ export default function AboutPage() {
               </div>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* Studio & Hardware Gear */}
-      <section className="py-14 sm:py-18 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center max-w-3xl mx-auto space-y-2 mb-10 sm:mb-12">
-          <h2 className="text-2xl sm:text-4xl font-extrabold text-slate-900 dark:text-white font-display">
-            The Studio Hardware Behind the Content
-          </h2>
-          <p className="text-slate-600 dark:text-gray-400 text-xs sm:text-sm">
-            Workstation setup, electronics laboratory equipment, and production cameras.
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
-          {studioGear.map((cat, idx) => (
-            <div
-              key={idx}
-              className="glass-panel rounded-2xl p-5 border border-slate-200/80 dark:border-white/10 space-y-3 shadow-sm"
-            >
-              <h3 className="text-sm sm:text-base font-bold text-slate-900 dark:text-white font-display border-b border-slate-200/80 dark:border-white/10 pb-2.5">
-                {cat.category}
-              </h3>
-              <div className="space-y-2.5">
-                {cat.items.map((item, iIdx) => (
-                  <div
-                    key={iIdx}
-                    className="p-2.5 rounded-xl bg-slate-50 dark:bg-surface-100/60 border border-slate-200/80 dark:border-white/5 space-y-0.5"
-                  >
-                    <div className="text-xs font-bold text-slate-900 dark:text-white font-display">
-                      {item.name}
-                    </div>
-                    <div className="text-[10px] sm:text-[11px] text-slate-500 dark:text-gray-400">
-                      {item.spec}
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          ))}
         </div>
       </section>
     </div>

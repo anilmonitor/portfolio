@@ -5,7 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import {
   Home,
-  Youtube,
+  Share2,
   FolderGit2,
   Mail,
   Sparkles,
@@ -16,9 +16,9 @@ export default function MobileBottomNav() {
 
   const navItems = [
     { name: "Home", href: "/", icon: Home },
-    { name: "Channels", href: "/channels", icon: Youtube },
     { name: "Projects", href: "/projects", icon: FolderGit2 },
     { name: "About", href: "/about", icon: Sparkles },
+    { name: "Socials", href: "/socials", icon: Share2 },
     { name: "Contact", href: "/contact", icon: Mail },
   ];
 

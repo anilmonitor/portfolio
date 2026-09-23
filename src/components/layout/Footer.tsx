@@ -146,14 +146,6 @@ export default function Footer() {
                   </a>
                 </li>
               ))}
-              <li>
-                <Link
-                  href="/channels"
-                  className="text-xs text-indigo-600 dark:text-indigo-400 hover:text-indigo-700 dark:hover:text-indigo-300 font-medium inline-flex items-center gap-1 mt-1"
-                >
-                  <Zap className="w-3 h-3" /> Explore Channels Hub
-                </Link>
-              </li>
             </ul>
           </div>
 
@@ -176,11 +168,6 @@ export default function Footer() {
               <li>
                 <Link href="/socials" className="hover:text-slate-900 dark:hover:text-white transition-colors">
                   All Social Profiles
-                </Link>
-              </li>
-              <li>
-                <Link href="/blog" className="hover:text-slate-900 dark:hover:text-white transition-colors">
-                  Articles & Guides
                 </Link>
               </li>
               <li>

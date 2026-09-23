@@ -6,11 +6,15 @@
   :root {
     --background: 248 250 252;
     --foreground: 15 23 42;
+    --card-shadow-rest: 0 10px 30px -4px rgba(0, 0, 0, 0.08), 0 4px 14px -2px rgba(0, 0, 0, 0.04);
+    --card-shadow-lift: 0 24px 48px -8px rgba(0, 0, 0, 0.14), 0 12px 24px -4px rgba(0, 0, 0, 0.08);
   }
 
   .dark {
     --background: 10 13 20;
     --foreground: 243 244 246;
+    --card-shadow-rest: 0 12px 35px -5px rgba(0, 0, 0, 0.5), 0 0 20px rgba(99, 102, 241, 0.14);
+    --card-shadow-lift: 0 25px 55px -8px rgba(0, 0, 0, 0.7), 0 0 35px rgba(99, 102, 241, 0.28);
   }
 
   body {
@@ -84,4 +88,29 @@
 
 ::-webkit-scrollbar-thumb:hover {
   background: #6366f1;
+}
+
+/* Amazon-Style Soft Breathing Box Shadow (60fps GPU Accelerated, No Lag) */
+@keyframes amazon-soft-float {
+  0%, 100% {
+    transform: translateY(0px);
+    box-shadow: var(--card-shadow-rest);
+  }
+  50% {
+    transform: translateY(-6px);
+    box-shadow: var(--card-shadow-lift);
+  }
+}
+
+.amazon-soft-card {
+  will-change: transform, box-shadow;
+  box-shadow: var(--card-shadow-rest);
+  animation: amazon-soft-float 5s ease-in-out infinite;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.amazon-soft-card:hover {
+  animation-play-state: paused;
+  transform: translateY(-8px);
+  box-shadow: var(--card-shadow-lift);
 }

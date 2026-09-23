@@ -11,6 +11,8 @@ import {
   Eye,
   Users,
   Building2,
+  Github,
+  Linkedin,
 } from "lucide-react";
 import { PORTFOLIO_DATA } from "@/data/portfolioData";
 
@@ -36,65 +38,30 @@ export default function HeroSection() {
               </span>
               <br />
               <span className="text-xl sm:text-3xl lg:text-4xl text-slate-700 dark:text-gray-300 font-semibold block mt-1.5 sm:mt-2">
-                Engineer, Tech Educator & Multi-Channel Creator
+                Full-Stack Software Engineer & Tech Founder
               </span>
             </h1>
 
             {/* Clean Professional Tagline */}
             <p className="text-sm sm:text-base lg:text-lg text-slate-600 dark:text-gray-300 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
-              Bridging full-stack software development, embedded electronics, and digital platforms. Inspiring over 150,000 learners across <strong>Anil Monitor</strong>, <strong>Anil Engineer</strong>, and <strong>Anil Monitor Vlog</strong>.
+              Full-Stack Software Engineer specializing in modern web applications, scalable cloud architectures, and interactive digital products. Crafting high-performance software with Next.js, TypeScript, and robust backend systems.
             </p>
-
-            {/* Clean Channel Badges */}
-            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-2 pt-1">
-              <a
-                href={PORTFOLIO_DATA.personal.socials.youtubeMain}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-indigo-50 dark:bg-indigo-500/10 border border-indigo-200 dark:border-indigo-500/30 text-indigo-700 dark:text-indigo-300 text-xs font-semibold hover:bg-indigo-100 dark:hover:bg-indigo-500/20 transition-colors"
-              >
-                <Youtube className="w-3.5 h-3.5 text-red-500" />
-                <span>Anil Monitor</span>
-                <span className="text-[10px] bg-indigo-200/70 dark:bg-indigo-500/30 px-1.5 py-0.5 rounded text-indigo-900 dark:text-white font-mono">100K+</span>
-              </a>
-              <a
-                href={PORTFOLIO_DATA.personal.socials.youtubeEngineer}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-emerald-50 dark:bg-emerald-500/10 border border-emerald-200 dark:border-emerald-500/30 text-emerald-700 dark:text-emerald-300 text-xs font-semibold hover:bg-emerald-100 dark:hover:bg-emerald-500/20 transition-colors"
-              >
-                <Cpu className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400" />
-                <span>Anil Engineer</span>
-                <span className="text-[10px] bg-emerald-200/70 dark:bg-emerald-500/30 px-1.5 py-0.5 rounded text-emerald-900 dark:text-white font-mono">35K+</span>
-              </a>
-              <a
-                href={PORTFOLIO_DATA.personal.socials.youtubeVlog}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-rose-50 dark:bg-rose-500/10 border border-rose-200 dark:border-rose-500/30 text-rose-700 dark:text-rose-300 text-xs font-semibold hover:bg-rose-100 dark:hover:bg-rose-500/20 transition-colors"
-              >
-                <Video className="w-3.5 h-3.5 text-rose-600 dark:text-rose-400" />
-                <span>Anil Monitor Vlog</span>
-                <span className="text-[10px] bg-rose-200/70 dark:bg-rose-500/30 px-1.5 py-0.5 rounded text-rose-900 dark:text-white font-mono">20K+</span>
-              </a>
-            </div>
 
             {/* CTAs */}
             <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3 sm:gap-4 pt-2 sm:pt-3">
               <Link
-                href="/channels"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 sm:px-7 py-3.5 rounded-xl bg-gradient-to-r from-red-600 via-rose-600 to-indigo-600 hover:from-red-500 hover:to-indigo-500 text-white font-semibold shadow-lg shadow-red-600/25 transition-all hover:scale-105 text-sm"
+                href="/projects"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 sm:px-7 py-3.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-semibold shadow-lg shadow-indigo-600/25 transition-all hover:scale-105 text-sm"
               >
-                <Youtube className="w-4 h-4" />
-                <span>Explore 3 Channels</span>
+                <Building2 className="w-4 h-4" />
+                <span>Live Projects</span>
                 <ArrowRight className="w-4 h-4" />
               </Link>
               <Link
-                href="/projects"
+                href="/about"
                 className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 sm:px-6 py-3.5 rounded-xl bg-white dark:bg-surface-100/90 hover:bg-slate-50 dark:hover:bg-surface-200 border border-slate-200 dark:border-white/10 text-slate-800 dark:text-white font-semibold transition-all hover:border-slate-300 dark:hover:border-white/20 text-sm shadow-sm"
               >
-                <Building2 className="w-4 h-4 text-indigo-600 dark:text-indigo-400" />
-                <span>Ventures & Projects</span>
+                <span>About Anil</span>
               </Link>
             </div>
           </div>
@@ -102,10 +69,7 @@ export default function HeroSection() {
           {/* Right Column: Hero Profile Card */}
           <div className="lg:col-span-5 flex justify-center mt-2 lg:mt-0">
             <div className="relative w-full max-w-xs sm:max-w-sm">
-              {/* Outer glowing aura */}
-              <div className="absolute -inset-1 bg-gradient-to-r from-indigo-500 via-purple-500 to-rose-500 rounded-3xl blur-lg opacity-30 dark:opacity-40 animate-pulse-slow" />
-
-              <div className="relative rounded-3xl overflow-hidden glass-panel border border-slate-200/80 dark:border-white/15 p-4 sm:p-5 shadow-2xl space-y-4">
+              <div className="relative rounded-3xl overflow-hidden glass-panel border border-slate-200/80 dark:border-white/15 p-4 sm:p-5 amazon-soft-card space-y-4">
                 {/* Photo */}
                 <div className="relative aspect-[4/5] rounded-2xl overflow-hidden border border-slate-200/60 dark:border-white/10 bg-slate-100 dark:bg-surface-200 shadow-inner">
                   <Image
@@ -125,27 +89,33 @@ export default function HeroSection() {
                   </div>
                 </div>
 
-                {/* Micro Metrics */}
+                {/* Social Connects: GitHub & LinkedIn */}
                 <div className="grid grid-cols-2 gap-2 sm:gap-3">
-                  <div className="p-2.5 sm:p-3 rounded-xl bg-slate-50 dark:bg-surface-100/70 border border-slate-200/60 dark:border-white/5 text-center">
-                    <div className="flex items-center justify-center gap-1 text-[11px] text-slate-500 dark:text-gray-400 mb-0.5">
-                      <Users className="w-3 h-3 text-indigo-600 dark:text-indigo-400" />
-                      <span>Subscribers</span>
-                    </div>
-                    <div className="text-base sm:text-lg font-bold text-slate-900 dark:text-white font-display">
-                      {personal.stats.subscribers}
-                    </div>
-                  </div>
+                  <a
+                    href={personal.socials.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="py-2.5 px-3 rounded-xl bg-slate-50 hover:bg-slate-100 dark:bg-surface-100/70 dark:hover:bg-surface-100 border border-slate-200/60 dark:border-white/10 transition-all group flex items-center justify-center gap-2 shadow-sm"
+                    title="GitHub @anilmonitor"
+                  >
+                    <Github className="w-4 h-4 text-slate-700 dark:text-gray-300 group-hover:text-slate-900 dark:group-hover:text-white transition-colors" />
+                    <span className="text-xs sm:text-sm font-semibold text-slate-800 dark:text-gray-200 group-hover:text-indigo-600 dark:group-hover:text-white transition-colors font-display">
+                      GitHub
+                    </span>
+                  </a>
 
-                  <div className="p-2.5 sm:p-3 rounded-xl bg-slate-50 dark:bg-surface-100/70 border border-slate-200/60 dark:border-white/5 text-center">
-                    <div className="flex items-center justify-center gap-1 text-[11px] text-slate-500 dark:text-gray-400 mb-0.5">
-                      <Eye className="w-3 h-3 text-rose-600 dark:text-rose-400" />
-                      <span>Total Views</span>
-                    </div>
-                    <div className="text-base sm:text-lg font-bold text-slate-900 dark:text-white font-display">
-                      {personal.stats.views}
-                    </div>
-                  </div>
+                  <a
+                    href={personal.socials.linkedin}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="py-2.5 px-3 rounded-xl bg-slate-50 hover:bg-blue-50/50 dark:bg-surface-100/70 dark:hover:bg-blue-500/10 border border-slate-200/60 dark:border-white/10 transition-all group flex items-center justify-center gap-2 shadow-sm"
+                    title="LinkedIn @anilmonitor"
+                  >
+                    <Linkedin className="w-4 h-4 text-blue-600 dark:text-blue-400 group-hover:scale-110 transition-transform" />
+                    <span className="text-xs sm:text-sm font-semibold text-slate-800 dark:text-gray-200 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors font-display">
+                      LinkedIn
+                    </span>
+                  </a>
                 </div>
               </div>
             </div>
