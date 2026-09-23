@@ -65,12 +65,9 @@ export default function Navbar() {
                 priority
               />
             </div>
-            <div className="flex flex-col">
-              <span className="text-sm sm:text-base font-bold tracking-tight text-slate-900 dark:text-white leading-tight font-display group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">
+            <div>
+              <span className="text-base sm:text-lg font-bold tracking-tight text-slate-900 dark:text-white block font-display group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">
                 Anil Kumar
-              </span>
-              <span className="text-[10px] sm:text-[11px] font-medium text-slate-500 dark:text-gray-400 leading-none mt-0.5">
-                Software Engineer
               </span>
             </div>
           </Link>
