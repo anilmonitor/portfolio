@@ -43,37 +43,40 @@ export default function Navbar() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-white/95 dark:bg-[#0a0d14]/90 backdrop-blur-md border-b border-slate-200/80 dark:border-white/10 shadow-sm dark:shadow-black/20 py-2.5 sm:py-3"
-          : "bg-white/80 dark:bg-[#0a0d14]/80 md:bg-transparent md:dark:bg-transparent backdrop-blur-md md:backdrop-blur-none border-b border-slate-200/50 dark:border-white/5 md:border-b-0 py-3 sm:py-4"
+          ? "bg-white/90 dark:bg-[#0a0d14]/90 backdrop-blur-xl border-b border-slate-200/80 dark:border-white/10 shadow-sm dark:shadow-black/25 py-2.5 sm:py-3"
+          : "bg-white/75 dark:bg-[#0a0d14]/75 backdrop-blur-lg border-b border-slate-200/50 dark:border-white/5 py-2.5 sm:py-3.5"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
-          {/* Logo / Brand (DP + Name + Handle, No green dot) */}
+          {/* Logo / Brand (Avatar + Name + Subtitle) */}
           <Link
             href="/"
             className="flex items-center gap-2.5 sm:gap-3 group"
             id="nav-logo"
           >
-            <div className="relative w-9 h-9 sm:w-10 sm:h-10 rounded-full overflow-hidden border-2 border-indigo-500/50 p-0.5 group-hover:border-indigo-400 transition-all duration-300 shadow-md shadow-indigo-500/20 shrink-0">
+            <div className="relative w-9 h-9 sm:w-10 sm:h-10 rounded-full overflow-hidden ring-2 ring-indigo-500/30 group-hover:ring-indigo-500/70 p-0.5 transition-all duration-300 shadow-sm shadow-indigo-500/20 shrink-0">
               <Image
                 src={PORTFOLIO_DATA.personal.avatar}
                 alt={PORTFOLIO_DATA.personal.name}
                 width={40}
                 height={40}
-                className="rounded-full object-cover w-full h-full"
+                className="rounded-full object-cover w-full h-full group-hover:scale-105 transition-transform"
                 priority
               />
             </div>
-            <div>
-              <span className="text-base sm:text-lg font-bold tracking-tight text-slate-900 dark:text-white block font-display">
+            <div className="flex flex-col">
+              <span className="text-sm sm:text-base font-bold tracking-tight text-slate-900 dark:text-white leading-tight font-display group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">
                 Anil Kumar
+              </span>
+              <span className="text-[10px] sm:text-[11px] font-medium text-slate-500 dark:text-gray-400 leading-none mt-0.5">
+                Software Engineer
               </span>
             </div>
           </Link>
 
           {/* Desktop Navigation Links */}
-          <nav className="hidden md:flex items-center gap-1 bg-slate-100/90 dark:bg-surface-50/60 p-1.5 rounded-full border border-slate-200/80 dark:border-white/10 backdrop-blur-md shadow-sm">
+          <nav className="hidden md:flex items-center gap-1 bg-slate-100/90 dark:bg-white/5 p-1 rounded-full border border-slate-200/80 dark:border-white/10 backdrop-blur-md shadow-xs">
             {navLinks.map((link) => {
               const isActive = pathname === link.href;
               return (
@@ -83,7 +86,7 @@ export default function Navbar() {
                   className={`px-3.5 py-1.5 lg:px-4 lg:py-2 rounded-full text-xs lg:text-sm font-medium transition-all duration-200 ${
                     isActive
                       ? "bg-indigo-600 text-white shadow-md shadow-indigo-600/30 font-semibold"
-                      : "text-slate-700 dark:text-gray-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-200/70 dark:hover:bg-white/5"
+                      : "text-slate-700 dark:text-gray-300 hover:text-slate-950 dark:hover:text-white hover:bg-slate-200/70 dark:hover:bg-white/10"
                   }`}
                 >
                   {link.name}
@@ -92,21 +95,21 @@ export default function Navbar() {
             })}
           </nav>
 
-          {/* Action Buttons, GitHub & Theme Toggle */}
-          <div className="hidden md:flex items-center gap-2 lg:gap-2.5">
+          {/* Action Buttons: GitHub & Theme Toggle */}
+          <div className="hidden md:flex items-center gap-2">
             {/* Theme Toggle Button (Sun / Moon) */}
             <ThemeToggle />
 
-            {/* Clearly Visible GitHub Icon Button */}
+            {/* Clearly Visible Matching GitHub Icon Button */}
             <a
               href={PORTFOLIO_DATA.personal.socials.github}
               target="_blank"
               rel="noopener noreferrer"
-              className="p-2.5 rounded-xl bg-slate-100 hover:bg-slate-200 dark:bg-white/10 dark:hover:bg-white/20 text-slate-800 dark:text-white border border-slate-300/80 dark:border-white/10 flex items-center justify-center transition-all shadow-sm"
+              className="p-2 rounded-xl bg-slate-100 hover:bg-slate-200 dark:bg-white/5 dark:hover:bg-white/10 text-slate-700 dark:text-gray-300 border border-slate-300/60 dark:border-white/10 flex items-center justify-center transition-all duration-300 hover:text-slate-950 dark:hover:text-white shadow-xs"
               title="GitHub Profile @anilmonitor"
               aria-label="GitHub Profile"
             >
-              <Github className="w-4 h-4 text-slate-900 dark:text-white" />
+              <Github className="w-4 h-4" />
             </a>
           </div>
 
